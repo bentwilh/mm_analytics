@@ -11,7 +11,19 @@
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
 
-        gtag('config', 'G-SJZZ9N2DNR');
+        // get 'lecture' parameter and send it as custom dimension
+        const urlParams = new URLSearchParams(window.location.search);
+        const lectureName = urlParams.get('lecture');
+
+        if (lectureName) {
+            gtag('config', 'G-SJZZ9N2DNR', {
+                custom_dimensions: {
+                lecture_name: lectureName
+                }
+            });
+        } else {
+            gtag('config', 'G-SJZZ9N2DNR');
+        }
     </script>
     <link rel="stylesheet" href="styles.css">
 </head>
