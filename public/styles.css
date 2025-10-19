@@ -151,3 +151,42 @@ img {
 .apply-now-label.visible {
     opacity: 1;
 }
+
+/* Responsive Anpassungen für mobile Geräte */
+@media (max-width: 480px) {
+    .main-logo {
+        width: 90vw;
+        max-width: 320px;
+    }
+    .slogan-vertical {
+        font-size: 1.2rem;
+        height: 2em;
+        margin-bottom: 10px;
+    }
+    .slogan-prefix {
+        font-size: 0.9rem;
+        margin-right: 8px;
+    }
+    .slogan-highlight {
+        font-size: 1.2rem;
+        line-height: 2em;
+        height: 2em;
+        max-width: 90vw;
+        white-space: normal;
+        word-break: break-word;
+    }
+    .slogan-roller {
+        height: 2em;
+        max-width: 90vw;
+    }
+    .apply-now-label, button {
+        width: 90vw;
+        max-width: 320px;
+        font-size: 1rem;
+        padding-left: 0;
+        padding-right: 0;
+    }
+    .container {
+        gap: 8px;
+    }
+}
