@@ -37,7 +37,7 @@ button {
     border: none;
     border-radius: 0px;
     padding: 15px 30px;
-    width: 270px;
+    width: 330px;
     height: 56px;
     margin: 0; 
     font-size: 20px;
@@ -152,6 +152,25 @@ img {
     opacity: 1;
 }
 
+/* Stellt sicher, dass alle Buttons am Anfang unsichtbar sind */
+.btn-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px; /* Entspricht dem gap im .container */
+    
+    /* Animationseffekte für das Einblenden */
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+
+/* Zustand, wenn die Buttons erscheinen sollen */
+.btn-group.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
 /* Responsive Anpassungen für mobile Geräte */
 @media (max-width: 480px) {
     .main-logo {
@@ -160,7 +179,7 @@ img {
     }
     .slogan-vertical {
         font-size: 1.2rem;
-        height: 2em;
+        height: 1.2em;
         margin-bottom: 10px;
     }
     .slogan-prefix {
@@ -169,16 +188,25 @@ img {
     }
     .slogan-highlight {
         font-size: 1.2rem;
-        line-height: 2em;
-        height: 2em;
+        line-height: 1.2em; 
+        height: 1.2em;  
+        
         max-width: 90vw;
-        white-space: normal;
-        word-break: break-word;
+        white-space: nowrap;
     }
     .slogan-roller {
-        height: 2em;
+        height: 1.2em;
         max-width: 90vw;
+        overflow: hidden;
     }
+    .slogan-roller-inner {
+        transition: transform 0.25s cubic-bezier(.4,2,.6,1);
+    }
+    .btn-group {
+        gap: 8px; /* Entspricht dem mobilen gap im .container */
+    }
+
+    
     .apply-now-label, button {
         width: 90vw;
         max-width: 320px;
